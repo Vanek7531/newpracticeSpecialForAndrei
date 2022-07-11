@@ -1,26 +1,56 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
+<script setup>
+import MyTemp from "./components/MyTemp.vue";
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+// let arrNEw = [1, 2, 3, 4, 5]
+let arrNEW = {
+	1: "first",
+	2: "second",
+	3: "third",
+	4: "fortyn",
+	5: "fiftyn",
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
-<style>
+<template>
+	{{ arrNEw }}
+
+	<div class="predoK">
+		<div class="blockForTest" v-for="(item, idx) in arrNEW" :key="idx">
+			<MyTemp> {{ item }}</MyTemp>
+		</div>
+
+
+	</div>
+</template>
+
+<style lang="css">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	margin-top: 60px;
+}
+
+body {
+	background: rgb(149, 156, 172);
+	font-size: 20px;
+}
+
+.predoK {
+	display: flex;
+	padding: 0 15px;
+	margin: 0 -10px;
+	overflow: hidden;
+}
+
+.blockForTest {
+	/* width: 150px; */
+	height: 150px;
+	border: 1px solid black;
+	flex: 1 1 auto;
+	margin: 0 10px;
 }
 </style>
