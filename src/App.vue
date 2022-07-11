@@ -17,7 +17,7 @@ let arrNEW = {
 
 	<div class="predoK">
 		<div class="blockForTest" v-for="(item, idx) in arrNEW" :key="idx">
-			<MyTemp> {{ item }}</MyTemp>
+			<MyTemp :itemValue="idx"> {{ item }} {{ idx }}</MyTemp>
 		</div>
 
 
